@@ -6,8 +6,8 @@ section .text
     global ft_strcmp
 
 ft_strcmp:
+    xor rbx, rbx
     xor rcx, rcx
-    xor rax, rax
 
 ; compare label is used to compare rsi (s1) and rdi (s2)
 ; first we check if we are at the EOL ('\0')
@@ -16,20 +16,22 @@ ft_strcmp:
 ; as long as rsi and rdi are the same, we call compare
 
 compare:
-    cmp byte[rdi + rcx], 0
-    je return
     cmp byte[rsi + rcx], 0
-    je return
+    je return ; EOL of [rdi]
+    cmp byte[rdi + rcx], 0
+    je return ; EOL of [rsi]
     mov bl, byte[rsi + rcx]
     cmp byte[rdi + rcx], bl
-    jnz return
+    jne return ; value at [rsi] != value at [rdi]
     inc rcx
     jmp compare
 
+; we return if:
+;   - foundd EOL of [rdi] OR [rsi]
+;   - found a diff between [rdi] AND [rsi] 
+
 return:
-    mov bl, byte[rdi + rcx]
-    mov dl, byte[rsi + rcx]
-    movzx rax, byte[rdi + rcx]
-    movzx rdx, byte[rsi + rcx]
-    sub rax, rdx
+    xor rax, rax
+    mov al, byte[rdi + rcx]
+    sub rax, rbx
     ret

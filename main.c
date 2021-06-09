@@ -65,19 +65,19 @@ int main()
 */
     char	strcmp1[] = "";
 	char	strcmp2[] = "Hello World !";
-//	printf("============================================\n");
-//	printf("================ Ft_strcmp =================\n");
-//	printf("============================================\n\n");
-//	printf("\033[36mresultat : libasm\033[00m\n");
-	ft_strcmp("Hello", "Hello");
-//	printf("\033[36mresultat : libc\033[00m\n");
-//	printf("return : [%d]\n\n", strcmp("Hello", "Hello"));
-//	printf("\033[36mresultat : libasm\033[00m\n");
-//	printf("return : [%d]\n", ft_strcmp("abcd", "abce"));
-//	printf("\033[36mresultat : libc\033[00m\n");
-//	printf("return : [%d]\n\n", strcmp("abcd", "abce"));
-//	printf("\033[36mresultat : libasm\033[00m\n");
-//	printf("return : [%d]\n", ft_strcmp(strcmp2, strcmp1));
-//	printf("\033[36mresultat : libc\033[00m\n");
-//	printf("return : [%d]\n\n", strcmp(strcmp2, strcmp1));
+	printf("============================================\n");
+	printf("================ Ft_strcmp =================\n");
+	printf("============================================\n\n");
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("return : [%d]\n\n", ft_strcmp("Hello", "Hello"));
+    printf("\033[36mresultat : libc\033[00m\n");
+	printf("return : [%d]\n\n", strcmp("Hello", "Hello"));
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("return : [%d]\n", ft_strcmp("abcd", "abce"));
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("return : [%d]\n\n", strcmp("abcd", "abce"));
+	printf("\033[36mresultat : libasm\033[00m\n");
+	printf("return : [%d]\n\n", ft_strcmp(strcmp2, strcmp1));
+	printf("\033[36mresultat : libc\033[00m\n");
+	printf("return : [%d]\n\n", strcmp(strcmp2, strcmp1));
 }
